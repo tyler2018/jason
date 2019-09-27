@@ -819,6 +819,39 @@ func (v *Value) String() (string, error) {
 	return "", ErrNotString
 }
 
+func (v *Value) IsString() (bool) {
+	if value, ok := v.data.(string); ok {
+		return true
+	}else {
+		return false
+	}
+}
+
+func (v *Value) IsInt64() (bool) {
+	if value, ok := v.data.(int64); ok {
+		return true
+	}else {
+		return false
+	}
+}
+
+func (v *Value) IsFloat64() (bool) {
+	if value, ok := v.data.(float64); ok {
+		return true
+	}else {
+		return false
+	}
+}
+
+func (v *Value) IsBool() (bool) {
+	if value, ok := v.data.(bool); ok {
+		return true
+	}else {
+		return false
+	}
+}
+
+
 // Returns the value a json formatted string.
 // Note: The method named String() is used by golang's log method for logging.
 // Example:
